@@ -20,7 +20,7 @@ export const useLogin = () => {
     onSuccess: (data, variables, context) => {
       const { data: result } = data;
         
-      if (!result || result.errorCode === 'BIZ002') {
+      if (result.errorCode === 'BIZ002') {
         alert(result.message);
       } else {
 
@@ -49,7 +49,7 @@ export const useSetCust = () => {
   return useMutation((member: Member) => setCustInfo(member), {
     onSuccess: (data, variables, context) => {
       const { data: result } = data;
-      if (!result || result.errorCode === 'BIZ003') {
+      if (result.errorCode === 'BIZ003') {
         alert(result.message);
       }else{
         alert('회원가입 성공. 로그인하세요');
