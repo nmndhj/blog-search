@@ -1,4 +1,4 @@
-package com.project.backend.auth.util;
+package com.project.backend.member.util;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

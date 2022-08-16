@@ -13,7 +13,7 @@ export const request = axios.create({
 request.interceptors.request.use(function (config) {
 
 //  console.log(config.url);
-  if (config.url.indexOf('signup') < 0 && config.url !== '/auth/login') {
+  if (config.url.indexOf('signup') < 0 && config.url !== '/login') {
 
     config.headers.Authorization = 'Bearer ' + localStorage.getItem('auth-token');
     

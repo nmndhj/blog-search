@@ -1,7 +1,6 @@
-package com.project.backend.auth.util;
+package com.project.backend.member.util;
 
-import com.project.backend.auth.dto.AuthResponseDto;
-import com.project.backend.common.error.BizException;
+import com.project.backend.member.dto.AuthResponseDto;
 import com.project.backend.common.error.ErrorCode;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

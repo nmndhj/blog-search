@@ -1,4 +1,4 @@
-package com.project.backend.auth.service;
+package com.project.backend.member.service;
 
 import com.project.backend.common.error.BizException;
 import com.project.backend.common.error.ErrorCode;

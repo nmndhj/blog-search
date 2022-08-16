@@ -20,8 +20,8 @@ export const useLogin = () => {
     onSuccess: (data, variables, context) => {
       const { data: result } = data;
         
-      if (!result || result.errorCode === 'UNAUTHORIZED_MEMBER') {
-        alert('로그인 실패');
+      if (!result || result.errorCode === 'BIZ002') {
+        alert(result.message);
       } else {
 
         localStorage.setItem('auth-token', result.accessToken);

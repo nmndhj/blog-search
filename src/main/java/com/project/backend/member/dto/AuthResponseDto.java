@@ -1,4 +1,4 @@
-package com.project.backend.auth.dto;
+package com.project.backend.member.dto;
 
 
 import lombok.Getter;

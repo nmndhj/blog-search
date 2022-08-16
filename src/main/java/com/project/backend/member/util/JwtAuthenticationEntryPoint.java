@@ -1,4 +1,4 @@
-package com.project.backend.auth.util;
+package com.project.backend.member.util;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

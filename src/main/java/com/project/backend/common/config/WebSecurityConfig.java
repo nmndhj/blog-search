@@ -1,8 +1,8 @@
 package com.project.backend.common.config;
 
-import com.project.backend.auth.util.JwtAuthenticationEntryPoint;
-import com.project.backend.auth.util.JwtSecurityConfig;
-import com.project.backend.auth.util.JwtTokenProvider;
+import com.project.backend.member.util.JwtAuthenticationEntryPoint;
+import com.project.backend.member.util.JwtSecurityConfig;
+import com.project.backend.member.util.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

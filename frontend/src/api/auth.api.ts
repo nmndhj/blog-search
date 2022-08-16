@@ -3,7 +3,7 @@ import { User, Cust, Member } from '../interfaces/Auth';
 import { ServerResponse } from '../interfaces/ServerResponse';
 
 export const token = async (user: User) => {
-  return request.post('/auth/login', user);
+  return request.post('/login', user);
 };
 
 export const getCustInfo = async (): Promise<ServerResponse<Cust>> => {

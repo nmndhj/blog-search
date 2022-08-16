@@ -21,8 +21,13 @@ export const Login: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const user: User = { id: data.get('id').toString(), password: data.get('password').toString() };
 
+    if((data.get('id')=='')||(data.get('password')=='')){
+      alert('id와 password를 입력하세요.');
+      return;
+    }
+
+    const user: User = { id: data.get('id').toString(), password: data.get('password').toString() };
     login.mutate(user);
   };
 
