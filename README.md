@@ -1,8 +1,8 @@
 ###블로그 검색 어플리케이션 
-- jar 다운로드 링크 :
+- jar 다운로드 링크 : https://github.com/nmndhj/blog-search/blob/master/blog-app.jar 
 - 실행방법 :
     ```shell
-    java -jar 
+    java -jar blog-app.jar 
     ```
 - 어플리케이션 Home : http://localhost:8081/
 
