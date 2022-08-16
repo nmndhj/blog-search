@@ -1,0 +1,54 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql : true
+        format_sql: true
+    defer-datasource-initialization: true
+#설정 정리 필요
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      failureRateThreshold: 50
+      slowCallRateThreshold: 100
+      slowCallDurationThreshold: 60000
+      permittedNumberOfCallsInHalfOpenState: 4
+      maxWaitDurationInHalfOpenState: 1000
+      slidingWindowType: COUNT_BASED
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 1
+      waitDurationInOpenState: 10000
+  instances:
+    kakaoCircuitBreaker:
+      baseConfig: default
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
+#연동 API url, key 설정
+feign:
+  kako-api:
+    url: https://dapi.kakao.com/v2/search/blog
+    key: 549461eca4568d719dd546b003628c11
+  naver-api:
+    url: https://openapi.naver.com/v1/search/blog.json
+    id: orApG7YWv67R5GQaHYBU
+    key: uVeF5dQV6W
+
+#jwt secret 키
+jwt:
+  secret: amF2YWlqYXhjYnNkZndmMzRzcWdkc2RxdmFpZ25odXNmb3NmZnFlZmVzZHNndmRmd2Vmc2ZzZmVncmdyMjIyMmYxMWQxNzZ3d2RkZW51c2VzZmV3ZGRkZA==
