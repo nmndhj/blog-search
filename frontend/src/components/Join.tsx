@@ -26,9 +26,14 @@ export const Join: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    if(data.get("name")=='' || data.get("email")=='' || data.get("id")=='' || data.get("password")==''){
+      alert('모든 항목을 입력하세요.');
+      return; 
+    }
 
     const member: Member = {};
     data.forEach(function (value, key) {
+      
       member[key] = value;
     });
 

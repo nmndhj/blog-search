@@ -48,8 +48,13 @@ export const useSetCust = () => {
 
   return useMutation((member: Member) => setCustInfo(member), {
     onSuccess: (data, variables, context) => {
-      alert('회원가입 성공. 로그인하세요');
-      navigate('/login');
+      const { data: result } = data;
+      if (!result || result.errorCode === 'BIZ003') {
+        alert(result.message);
+      }else{
+        alert('회원가입 성공. 로그인하세요');
+        navigate('/login');
+      }
     },
     onError: (error) => {
       alert('회원가입 실패');
